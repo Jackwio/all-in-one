@@ -90,16 +90,14 @@ const featureCatalog = [
     features: [
       {
         name: "AI 筆記",
-        status: "ready",
         description: "AI 相關筆記，整理模型、工具與應用實作重點。",
-        tags: ["AI 相關筆記", "LLM", "工作流"],
+        tags: ["LLM"],
         url: "https://jackwio.github.io/ai-note/",
       },
       {
         name: "Deploy 筆記",
-        status: "ready",
-        description: "Deploy 相關筆記，聚焦 Zeabur、Docker、K8s 實戰紀錄。",
-        tags: ["Deploy 相關", "Zeabur", "Docker", "K8s"],
+        description: "聚焦 Zeabur、Docker、K8s 實戰紀錄。",
+        tags: ["Zeabur", "Docker", "K8s"],
         url: "https://jackwio.github.io/deploy-note/",
       },
     ],
