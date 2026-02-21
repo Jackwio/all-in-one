@@ -204,7 +204,7 @@ function renderCards() {
           </div>
           <p class="card-desc">${escapeHtml(feature.description)}</p>
           <div class="tag-row">${tagsMarkup}</div>
-          <a href="${escapeHtml(feature.url)}" class="card-link" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(feature.name)} 詳細資訊">查看詳情</a>
+          <a href="${escapeHtml(feature.url)}" class="card-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">查看詳情</a>
         </article>
       `;
     })

@@ -14,13 +14,13 @@ assert_file() {
 assert_contains() {
   local file="$1"
   local pattern="$2"
-  grep -qE "$pattern" "$file" || fail "expected pattern '$pattern' in $file"
+  grep -qE -- "$pattern" "$file" || fail "expected pattern '$pattern' in $file"
 }
 
 assert_not_contains() {
   local file="$1"
   local pattern="$2"
-  if grep -qE "$pattern" "$file"; then
+  if grep -qE -- "$pattern" "$file"; then
     fail "unexpected pattern '$pattern' in $file"
   fi
 }
@@ -44,11 +44,15 @@ assert_contains "assets/app.js" "Deploy 相關"
 assert_contains "assets/app.js" "https://jackwio.github.io/ai-note/"
 assert_contains "assets/app.js" "https://jackwio.github.io/deploy-note/"
 assert_contains "assets/app.js" "href=\"\\$\\{escapeHtml\\(feature.url\\)\\}\""
+assert_not_contains "assets/app.js" "target=\"_blank\""
+assert_not_contains "assets/app.js" "rel=\"noopener noreferrer\""
 assert_contains "assets/app.js" "let activeTab = featureCatalog\\.find\\(\\(item\\) => item\\.id === \"notes\"\\)\\?\\.id \\?\\? featureCatalog\\[0\\]\\.id;"
 
 assert_contains "assets/styles.css" "\\.feature-tabs"
 assert_contains "assets/styles.css" "\\.feature-card"
 assert_contains "assets/styles.css" "@media \\(max-width: 768px\\)"
+assert_contains "assets/styles.css" "--bg-top: #05070c;"
+assert_contains "assets/styles.css" "--bg-bottom: #0d111c;"
 
 assert_not_contains "index.html" "一眼看懂所有功能"
 assert_not_contains "index.html" "以分類 Tab 快速切換能力領域，透過卡片檢視每項功能的價值、用途與狀態。"
