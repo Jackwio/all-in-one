@@ -9,18 +9,21 @@ const featureCatalog = [
         status: "ready",
         description: "集中管理常用命令與捷徑，降低切換工具的成本。",
         tags: ["命令集", "快捷操作", "高頻流程"],
+        url: "#",
       },
       {
         name: "流程組合器",
         status: "ready",
         description: "把多個步驟串成一鍵流程，重複任務不再重工。",
         tags: ["工作流", "批次處理", "效率提升"],
+        url: "#",
       },
       {
         name: "任務快照",
         status: "beta",
         description: "保存當前任務狀態，讓你可以在任意時間點快速回復。",
         tags: ["版本快照", "狀態回復", "追蹤"],
+        url: "#",
       },
     ],
   },
@@ -34,18 +37,21 @@ const featureCatalog = [
         status: "ready",
         description: "彙整測試結果與失敗重點，快速定位失敗來源。",
         tags: ["測試", "回歸檢查", "品質監控"],
+        url: "#",
       },
       {
         name: "部署檢查清單",
         status: "beta",
         description: "部署前自動核對必要項目，避免遺漏設定與依賴。",
         tags: ["部署", "風險控管", "準備度"],
+        url: "#",
       },
       {
         name: "API 探索器",
         status: "roadmap",
         description: "可視化瀏覽 API 能力與範例請求，縮短整合時間。",
         tags: ["API", "文件導覽", "整合效率"],
+        url: "#",
       },
     ],
   },
@@ -59,18 +65,42 @@ const featureCatalog = [
         status: "ready",
         description: "以卡片式摘要呈現關鍵趨勢，快速掌握變化。",
         tags: ["趨勢", "視覺摘要", "指標"],
+        url: "#",
       },
       {
         name: "異常提醒",
         status: "beta",
         description: "針對關鍵指標異常波動發出提醒，提早介入處理。",
         tags: ["告警", "異常偵測", "即時反應"],
+        url: "#",
       },
       {
         name: "報告生成器",
         status: "roadmap",
         description: "依模板快速輸出週報與月報，統一對外溝通格式。",
         tags: ["自動報告", "模板", "溝通效率"],
+        url: "#",
+      },
+    ],
+  },
+  {
+    id: "notes",
+    label: "筆記",
+    description: "收錄 AI 與部署實務筆記，方便快速查閱與分享。",
+    features: [
+      {
+        name: "AI 筆記",
+        status: "ready",
+        description: "AI 相關筆記，整理模型、工具與應用實作重點。",
+        tags: ["AI 相關筆記", "LLM", "工作流"],
+        url: "https://jackwio.github.io/ai-note/",
+      },
+      {
+        name: "Deploy 筆記",
+        status: "ready",
+        description: "Deploy 相關筆記，聚焦 Zeabur、Docker、K8s 實戰紀錄。",
+        tags: ["Deploy 相關", "Zeabur", "Docker", "K8s"],
+        url: "https://jackwio.github.io/deploy-note/",
       },
     ],
   },
@@ -174,7 +204,7 @@ function renderCards() {
           </div>
           <p class="card-desc">${escapeHtml(feature.description)}</p>
           <div class="tag-row">${tagsMarkup}</div>
-          <a href="#" class="card-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">查看詳情</a>
+          <a href="${escapeHtml(feature.url)}" class="card-link" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(feature.name)} 詳細資訊">查看詳情</a>
         </article>
       `;
     })
