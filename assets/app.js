@@ -2,7 +2,7 @@ const featureCatalog = [
   {
     id: "core",
     label: "核心工具",
-    description: "日常最常用的整合能力，快速處理主要工作流。",
+    description: "",
     features: [
       {
         name: "智慧指令中心",
@@ -112,7 +112,7 @@ const statusTextMap = {
   roadmap: "ROADMAP",
 };
 
-let activeTab = featureCatalog[0].id;
+let activeTab = featureCatalog.find((item) => item.id === "notes")?.id ?? featureCatalog[0].id;
 
 const tabListElement = document.querySelector("#feature-tabs");
 const cardsGridElement = document.querySelector("#cards-grid");
