@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All-in-One 功能總覽</title>
+    <meta
+      name="description"
+      content="All-in-One 工具功能總覽，透過分類 Tab 與卡片快速瀏覽所有能力。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">ALL-IN-ONE TOOLKIT</p>
+        <h1 class="hero-title">一眼看懂所有功能</h1>
+        <p class="hero-copy">
+          以分類 Tab 快速切換能力領域，透過卡片檢視每項功能的價值、用途與狀態。
+        </p>
+      </header>
+
+      <section class="overview-panel" aria-label="功能總覽">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">功能分類</h2>
+            <p id="panel-description" class="panel-description"></p>
+          </div>
+          <p id="panel-count" class="panel-count"></p>
+        </div>
+
+        <nav class="feature-tabs" aria-label="功能種類切換">
+          <div id="feature-tabs" role="tablist" aria-label="功能分類頁籤"></div>
+        </nav>
+
+        <section id="tab-panel" role="tabpanel" aria-live="polite">
+          <div id="cards-grid" class="cards-grid"></div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
