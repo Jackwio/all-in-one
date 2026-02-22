@@ -189,7 +189,11 @@ function renderCards() {
 
   cardsGridElement.innerHTML = selectedCategory.features
     .map((feature, index) => {
-      const statusClass = `status-${feature.status}`;
+      const statusText = statusTextMap[feature.status];
+      const statusClass = statusText ? `status-${feature.status}` : "";
+      const statusMarkup = statusText
+        ? `<span class="card-status ${statusClass}">${statusText}</span>`
+        : "";
       const tagsMarkup = feature.tags
         .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
         .join("");
@@ -200,7 +204,7 @@ function renderCards() {
             <h3 class="card-title">
               <a href="${escapeHtml(feature.url)}" class="card-title-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">${escapeHtml(feature.name)}</a>
             </h3>
-            <span class="card-status ${statusClass}">${statusTextMap[feature.status]}</span>
+            ${statusMarkup}
           </div>
           <p class="card-desc">${escapeHtml(feature.description)}</p>
           <div class="tag-row">${tagsMarkup}</div>
