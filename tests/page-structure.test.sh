@@ -53,6 +53,8 @@ assert_contains "assets/app.js" "let activeTab = featureCatalog\\.find\\(\\(item
 assert_contains "assets/styles.css" "\\.feature-tabs"
 assert_contains "assets/styles.css" "\\.feature-card"
 assert_contains "assets/styles.css" "\\.card-title-link"
+assert_contains "assets/styles.css" "text-underline-offset: 0.18em;"
+assert_not_contains "assets/styles.css" "text-decoration: none;"
 assert_contains "assets/styles.css" "@media \\(max-width: 768px\\)"
 assert_contains "assets/styles.css" "--bg-top: #05070c;"
 assert_contains "assets/styles.css" "--bg-bottom: #0d111c;"

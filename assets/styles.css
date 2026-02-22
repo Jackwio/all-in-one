@@ -221,14 +221,18 @@ body {
 }
 
 .card-title-link {
-  color: var(--ink-strong);
-  text-decoration: none;
+  color: var(--accent-deep);
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(124, 181, 255, 0.75);
+  transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
 .card-title-link:hover,
 .card-title-link:focus-visible {
-  color: var(--accent-deep);
-  text-decoration: underline;
+  color: #b8d3ff;
+  text-decoration-color: currentColor;
 }
 
 .card-status {
