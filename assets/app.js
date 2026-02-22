@@ -197,12 +197,13 @@ function renderCards() {
       return `
         <article class="feature-card" style="--delay:${index * 90}ms">
           <div class="card-head">
-            <h3 class="card-title">${escapeHtml(feature.name)}</h3>
+            <h3 class="card-title">
+              <a href="${escapeHtml(feature.url)}" class="card-title-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">${escapeHtml(feature.name)}</a>
+            </h3>
             <span class="card-status ${statusClass}">${statusTextMap[feature.status]}</span>
           </div>
           <p class="card-desc">${escapeHtml(feature.description)}</p>
           <div class="tag-row">${tagsMarkup}</div>
-          <a href="${escapeHtml(feature.url)}" class="card-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">查看詳情</a>
         </article>
       `;
     })
