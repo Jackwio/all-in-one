@@ -49,8 +49,8 @@ assert_contains "assets/app.js" "const statusText = statusTextMap\\[feature.stat
 assert_contains "assets/app.js" "const statusMarkup = statusText"
 assert_not_contains "assets/app.js" "<span class=\"card-status \\$\\{statusClass\\}\">\\$\\{statusTextMap\\[feature.status\\]\\}</span>"
 assert_not_contains "assets/app.js" "查看詳情"
-assert_not_contains "assets/app.js" "target=\"_blank\""
-assert_not_contains "assets/app.js" "rel=\"noopener noreferrer\""
+assert_contains "assets/app.js" "target=\"_blank\""
+assert_contains "assets/app.js" "rel=\"noopener noreferrer\""
 assert_contains "assets/app.js" "let activeTab = featureCatalog\\.find\\(\\(item\\) => item\\.id === \"notes\"\\)\\?\\.id \\?\\? featureCatalog\\[0\\]\\.id;"
 
 assert_contains "assets/styles.css" "\\.feature-tabs"

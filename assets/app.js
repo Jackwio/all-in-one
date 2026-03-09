@@ -193,7 +193,13 @@ function renderCards() {
         <article class="feature-card" style="--delay:${index * 90}ms">
           <div class="card-head">
             <h3 class="card-title">
-              <a href="${escapeHtml(feature.url)}" class="card-title-link" aria-label="${escapeHtml(feature.name)} 詳細資訊">${escapeHtml(feature.name)}</a>
+              <a
+                href="${escapeHtml(feature.url)}"
+                class="card-title-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="${escapeHtml(feature.name)} 詳細資訊"
+              >${escapeHtml(feature.name)}</a>
             </h3>
             ${statusMarkup}
           </div>
